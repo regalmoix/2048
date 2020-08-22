@@ -23,11 +23,12 @@
 
         make run
         
->  [Optional] Clean Building
+>  [Optional] Cleaning Build
 
         make clean
 
-# Rules :
+Rules
+----
 * w, s, a, d to do the moves in up, down, left, right directions respectively.
 * Score is incremented by the sum of values of the newly merged tiles.
 * Game ends when no empty tiles remain and no more moves possible.
