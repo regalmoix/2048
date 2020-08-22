@@ -3,7 +3,8 @@
 * A simple 2048 game written in C++ with CLI Graphics using ncurses.
 * Author : Nachiket Agrawal (C++), and Amit Chauhan (Code Refactoring and Makefile) 
 
-# Instructions
+Instructions
+----
 
 > Cloning the repository
 
