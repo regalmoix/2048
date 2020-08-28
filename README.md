@@ -12,6 +12,9 @@ Instructions
         git clone https://github.com/regalmoix/2048.git
         cd ~/2048
         
+> [Optional] Using Development branch (Output bugs untested) for minimal version
+
+        git checkout development
 
 >  Building the source
 
