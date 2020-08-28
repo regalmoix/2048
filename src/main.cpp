@@ -1,5 +1,5 @@
 #include "./global.h"
-#include <curses.h>
+//#include <curses.h>
 
 int score = 0;
 
@@ -18,6 +18,7 @@ int main()
 
     printboard(board, n); 
 
-    return endwin();
+    //return endwin();
+    return 0;
 
 }

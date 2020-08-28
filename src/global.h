@@ -16,6 +16,13 @@ extern std::vector<std::pair<int, int>> emptypos;
 template<typename Iter, typename RandomGenerator> Iter select_randomly(Iter start, Iter end, RandomGenerator& g);
 template<typename Iter> Iter select_randomly(Iter start, Iter end);
 
+/*
+int endwin()
+{
+    return 0;
+}
+*/
+
 void input(vector<vector<int>>& board, int n);
 void boardinit(int n);
 

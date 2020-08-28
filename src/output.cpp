@@ -1,6 +1,7 @@
 #include "./global.h"
-#include <curses.h>
+//#include <curses.h>
 #include <fstream>
+#include <iostream>
 
 
 int printboard(vector<vector<int>>& board, int n)
@@ -8,14 +9,16 @@ int printboard(vector<vector<int>>& board, int n)
     //ofstream debug;
     //debug.open("test", ios::out);
 
-    keypad(initscr(),1);
-    curs_set(0);
+    //keypad(initscr(),1);
+    //curs_set(0);
 
-    clear();
+    system("clear");
 
-    move(5*n, 5*n);
+    //move(5*n, 5*n);
 
-    printw("SCORE : %d", score);
+    printf("SCORE : %d", score);
+
+    cout << endl << endl;
 
     for (int i = 0; i < n; i++)
     {
@@ -29,18 +32,21 @@ int printboard(vector<vector<int>>& board, int n)
             //mvprintw(6*i, 6*j, c);
 
 
-            move(4*i, 4*j);
+            //move(4*i, 4*j);
 
             if (board[i][j])
-                printw("%d", board[i][j]);
+                printf("%d", board[i][j]);
             
             else 
-                printw("%d", board[i][j]);
+                printf("%d", board[i][j]);
 
             //debug << board[i][j] << " ";
             
+            cout << "    "; 
+            
         }
         //debug << endl;
+        cout << endl;
     }
     
     //debug.close();
@@ -51,10 +57,12 @@ int printboard(vector<vector<int>>& board, int n)
 
     if (emptypos.empty() && !checkmove(board, n))
     {
-        move(6*n, 0);
-        printw("\n\nGame Ended, Out of Moves.\nFinal Score : %d \nPress any key to quit.", score);
-        getch();
-        return endwin();
+        //move(6*n, 0);
+        system("clear");
+        printf("\n\nGame Ended, Out of Moves.\nFinal Score : %d \nPress any key to quit.", score);
+        cin.get();
+        //return endwin();
+        return 0;
     }
 
     //exected only if move possible
@@ -68,17 +76,19 @@ int printboard(vector<vector<int>>& board, int n)
 
 int tilemove (vector<vector<int>>& board, int n)
 {
-    noecho();
-    char dir = getch();
+    //noecho();
+    char dir; // = getch();
+    cin >> dir;
 
     emptycell(board, n);
 
     if (dir == ESC)
     {
-        clear();
-        printw("Final Score : %d \nPress any key to quit.", score);
-        getch();
-        return endwin();
+        system("clear");
+        printf("Final Score : %d \nPress any key to quit.", score);
+        cin.get();
+        //return endwin();
+        return 0;
     }
 
     switch (dir)
