@@ -4,7 +4,7 @@ BUILDDIR= ./build
 INCLUDEDIR= ./include
 SRCDIR= ./src
 COBJ= input.o main.o output.o process.o randomgen.o
-LDARGS= -lncurses
+#LDARGS= -lncurses
 
 all: game
 
