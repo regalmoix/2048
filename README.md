@@ -38,6 +38,7 @@ Rules
 * Score is incremented by the sum of values of the newly merged tiles.
 * Game ends when no empty tiles remain and no more moves possible.
 * Press Esc to quit the game early. Progress will be lost.
+* Resize terminal to fullscreen for best experience.
 
 License
 ----
