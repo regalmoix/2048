@@ -77,41 +77,47 @@ int tilemove (vector<vector<int>>& board, int n)
     {
         clear();
         printw("Final Score : %d \nPress any key to quit.", score);
-        getch();
-        return endwin();
+        char x = getch();
+	    return endwin();
     }
-
-    switch (dir)
+    else 
     {
-        case UP :   up(board, n);
-                    break;
-                    
-        case DOWN : down(board, n);
-                    break;
+        auto ogboard = board;
+        switch (dir)
+        {
+            case UP :   up(board, n);
+                        break;
+                        
+            case DOWN : down(board, n);
+                        break;
 
-        case LEFT : left(board, n);
-                    break;
+            case LEFT : left(board, n);
+                        break;
 
-        case RIGHT: right(board, n);
-                    break;
+            case RIGHT: right(board, n);
+                        break;
 
-        default:
-                    printboard(board, n);
-                    break;
-    }
+            default:
+                        printboard(board, n);
+                        break;
+        }
 
-    addrandom(board);
-    emptycell(board, n);
-    /*
-    if (emptypos.empty() && !checkmove(board, n))
-    {
-        move(6*n, 0);
-        printw("\n\nGame Ended, Out of Moves.\nFinal Score : %d \nPress any key to quit.", score);
-        getch();
-        return endwin();
-    }
-    */
-    printboard(board, n);
-
-    return 0;
+        if (board != ogboard)
+        {
+            addrandom(board);
+        }
+            
+        emptycell(board, n);
+        /*
+        if (emptypos.empty() && !checkmove(board, n))
+        {
+            move(6*n, 0);
+            printw("\n\nGame Ended, Out of Moves.\nFinal Score : %d \nPress any key to quit.", score);
+            getch();
+            return endwin();
+        }
+        */
+        printboard(board, n);
+        return 0;
+    }    
 }
