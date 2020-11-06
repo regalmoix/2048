@@ -10,7 +10,7 @@ all: game
 
 game: $(COBJ)
 	@echo "Linking Final Executable..."
-	@(cd build; g++ $(LDARGS) -o game $^)
+	@(cd build; g++ -o game $^ $(LDARGS))
 
 run: game
 	@(cd build; ./game)
